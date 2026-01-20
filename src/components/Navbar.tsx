@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
 import {
   AiFillStar,
@@ -12,6 +12,7 @@ import { CgFileDocument } from "react-icons/cg";
 const Navbar: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [navColour, setNavColour] = useState<boolean>(false);
+  const location = useLocation();
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -81,15 +82,24 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
               const IconComponent = item.icon;
+              const isActive = location.pathname === item.to;
               return (
                 <Link
                   key={item.label}
                   to={item.to}
-                  className="nav-link text-white hover:text-purple-300 transition-all duration-300 relative group flex items-center gap-2"
+                  className={`nav-link transition-all duration-300 relative group flex items-center gap-2 ${
+                    isActive
+                      ? "text-[#c95bf5]"
+                      : "text-white hover:text-purple-300"
+                  }`}
                 >
                   <IconComponent className="text-lg" />
                   <span>{item.label}</span>
-                  <span className="absolute bottom-0 left-0 w-0 h-1 bg-[#c95bf5] group-hover:w-full transition-all duration-300"></span>
+                  <span
+                    className={`absolute bottom-0 left-0 h-1 bg-[#c95bf5] transition-all duration-300 ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  ></span>
                 </Link>
               );
             })}
@@ -113,12 +123,17 @@ const Navbar: React.FC = () => {
             <div className="flex flex-col gap-2 p-3">
               {navItems.map((item) => {
                 const IconComponent = item.icon;
+                const isActive = location.pathname === item.to;
                 return (
                   <Link
                     key={item.label}
                     to={item.to}
                     onClick={handleNavClick}
-                    className="nav-link text-white hover:text-purple-300 transition-all duration-300 flex items-center gap-2 px-4 py-2"
+                    className={`nav-link transition-all duration-300 flex items-center gap-2 px-4 py-2 rounded ${
+                      isActive
+                        ? "bg-[#934cce5e] text-[#c95bf5]"
+                        : "text-white hover:text-purple-300 hover:bg-[#2a2844]"
+                    }`}
                   >
                     <IconComponent className="text-lg" />
                     <span>{item.label}</span>
