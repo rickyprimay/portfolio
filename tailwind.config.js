@@ -26,6 +26,8 @@ export default {
       },
       fontFamily: {
         raleway: ["Raleway", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        sans: ["Poppins", "sans-serif"],
       },
       spacing: {
         "xs": "0.25rem",    // 4px

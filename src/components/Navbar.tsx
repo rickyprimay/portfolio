@@ -87,7 +87,7 @@ const Navbar: React.FC = () => {
                 <Link
                   key={item.label}
                   to={item.to}
-                  className={`nav-link transition-all duration-300 relative group flex items-center gap-2 text-sm font-medium ${
+                  className={`nav-link transition-all duration-300 relative group flex items-center gap-2 text-base font-semibold ${
                     isActive
                       ? "text-primary"
                       : "text-gray-300 hover:text-primary"
@@ -137,7 +137,7 @@ const Navbar: React.FC = () => {
                       key={item.label}
                       to={item.to}
                       onClick={handleNavClick}
-                      className={`nav-link transition-all duration-300 flex items-center gap-2 px-4 py-3 rounded-lg font-medium ${
+                      className={`nav-link transition-all duration-300 flex items-center gap-2 px-4 py-3 rounded-lg font-semibold text-base ${
                         isActive
                           ? "bg-primary/20 text-primary border border-primary/30"
                           : "text-gray-300 hover:text-primary hover:bg-primary/10"
