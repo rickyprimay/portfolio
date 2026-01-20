@@ -7,10 +7,10 @@ import Type from "./Type";
 const Home: React.FC = () => {
   return (
     <section className="relative">
-      <div className="pt-20 md:pt-32" id="home">
+      <div className="pt-32 md:pt-40 lg:pt-48" id="home">
         <Particle />
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-16 md:py-20">
             {/* Left Column - Text */}
             <div className="flex flex-col justify-center">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
@@ -18,7 +18,7 @@ const Home: React.FC = () => {
                 <span
                   role="img"
                   aria-label="wave"
-                  className="inline-block ml-2"
+                  className="inline-block ml-2 animate-wave origin-center"
                 >
                   👋🏻
                 </span>

@@ -7,22 +7,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Primary Brand Colors
-        primary: "#c770f0",      // Purple highlight
-        "primary-dark": "#a24dd3", // Darker purple
+        // Star Wars Blue Saber Theme - Enhanced
+        primary: "#0052cc",      // Vivid blue saber (darker, more intense)
+        "primary-dark": "#002266", // Darker saber blue
 
-        // Backgrounds
-        "bg-dark": "#0c0513",     // Darkest
-        "bg-base": "#1b1429",     // Base dark
-        "bg-card": "#181a27",     // Card background
-        "bg-light": "#2d1950",    // Lighter shade
+        // Backgrounds - More vibrant with better contrast
+        "bg-dark": "#000508",     // Nearly black with blue tint
+        "bg-base": "#050a1a",     // Deep space with blue accent
+        "bg-card": "#0a1529",     // Card background with blue glow potential
+        "bg-light": "#0f1f3d",    // Lighter blue with visible depth
 
         // Text Colors
-        "text-muted": "#808080",  // Muted gray
+        "text-muted": "#4a6fa5",  // Muted blue (more visible)
 
-        // Accents
-        "accent-purple": "#cd5ff8", // Bright purple
-        "accent-gold": "#ffd700",   // Gold
+        // Accents - More vibrant cyan/electric
+        "accent-purple": "#00e5ff", // Bright cyan (max opacity)
+        "accent-gold": "#00d4ff",   // Electric cyan
+      },
+      boxShadow: {
+        "sm": "0 1px 2px 0 rgba(0, 82, 204, 0.1)",
+        "md": "0 4px 6px -1px rgba(0, 82, 204, 0.15)",
+        "lg": "0 10px 15px -3px rgba(0, 82, 204, 0.2)",
+        "xl": "0 20px 25px -5px rgba(0, 82, 204, 0.25)",
+        "glow": "0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 82, 204, 0.4)",
+        "glow-lg": "0 0 30px rgba(0, 212, 255, 0.8), 0 0 60px rgba(0, 82, 204, 0.6)",
       },
       fontFamily: {
         raleway: ["Raleway", "sans-serif"],
@@ -55,6 +63,7 @@ export default {
         pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         fadeIn: "fadeIn 0.3s ease-in-out",
         slideUp: "slideUp 0.3s ease-out",
+        wave: "wave 2s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -64,6 +73,15 @@ export default {
         slideUp: {
           "0%": { transform: "translateY(10px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        wave: {
+          "0%": { transform: "rotate(0deg)" },
+          "10%": { transform: "rotate(-10deg)" },
+          "20%": { transform: "rotate(12deg)" },
+          "30%": { transform: "rotate(-8deg)" },
+          "40%": { transform: "rotate(9deg)" },
+          "50%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(0deg)" },
         },
       },
     },

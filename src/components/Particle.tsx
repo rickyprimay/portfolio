@@ -14,6 +14,9 @@ const Particle: React.FC = () => {
               value_area: 1500,
             },
           },
+          color: {
+            value: ["#0052cc", "#00d4ff", "#00e5ff", "#0099ff"],
+          },
           line_linked: {
             enable: false,
             opacity: 0.03,
@@ -23,13 +26,13 @@ const Particle: React.FC = () => {
             speed: 0.05,
           },
           size: {
-            value: 1,
+            value: 1.5,
           },
           opacity: {
             anim: {
               enable: true,
-              speed: 1,
-              opacity_min: 0.05,
+              speed: 1.2,
+              opacity_min: 0.1,
             },
           },
         },

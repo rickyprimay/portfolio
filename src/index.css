@@ -3,27 +3,53 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(12deg);
+  }
+  30% {
+    transform: rotate(-8deg);
+  }
+  40% {
+    transform: rotate(9deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 /* Custom Root Variables */
 @layer root {
   :root {
     --section-background: linear-gradient(
-      to bottom left,
-      rgba(17, 16, 16, 0.582),
-      rgba(12, 8, 24, 0.904)
+      135deg,
+      rgba(5, 10, 26, 0.95),
+      rgba(0, 82, 204, 0.15),
+      rgba(0, 212, 255, 0.05)
     );
     --image-gradient: linear-gradient(
-      to bottom left,
-      rgba(17, 16, 16, 0.678),
-      rgba(12, 10, 22, 0.863)
+      135deg,
+      rgba(5, 10, 26, 0.95),
+      rgba(0, 82, 204, 0.2),
+      rgba(0, 212, 255, 0.08)
     );
-    --imp-text-color: #c770f0;
+    --imp-text-color: #0052cc;
   }
 }
 
 /* Base Styles */
 @layer base {
   body {
-    @apply font-raleway bg-gradient-to-l from-[#1b1429] to-[#140f23] text-white antialiased;
+    @apply font-raleway bg-gradient-to-br from-[#050a1a] via-[#000508] to-[#0a1529] text-white antialiased;
   }
 
   button:focus {
@@ -34,12 +60,12 @@
 /* Utilities */
 @layer components {
   .purple-text {
-    @apply text-[#c770f0];
+    @apply text-[#0052cc];
   }
 
   /* Preloader */
   #preloader {
-    @apply fixed inset-0 z-[999999] bg-[#0c0513] bg-center bg-no-repeat bg-cover;
+    @apply fixed inset-0 z-[999999] bg-[#000508] bg-center bg-no-repeat bg-cover;
     background-image: url(./Assets/pre.svg);
   }
 
@@ -57,20 +83,22 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-[#2d1950];
+    @apply bg-[#050a1a];
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-[rgba(178,121,216,0.959)] rounded-[12px];
+    background-color: rgba(0, 82, 204, 0.8);
+    @apply rounded-[12px];
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-[rgba(222,130,235,0.911)];
+    background-color: rgba(0, 212, 255, 1);
   }
 
   /* Navbar */
   .sticky {
-    @apply bg-[#1b1a2ea9] transition-all duration-300 shadow-lg backdrop-blur-[15px];
+    @apply bg-[#050a1aa9] transition-all duration-300 shadow-lg backdrop-blur-[15px];
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
   }
 
   .navbar {
@@ -82,7 +110,7 @@
   }
 
   .navbar-toggler span {
-    @apply block bg-[#be50f4] h-1 w-[27px] my-1 transition-transform duration-300;
+    @apply block bg-[#0052cc] h-1 w-[27px] my-1 transition-transform duration-300;
   }
 
   .navbar-toggler:focus,
@@ -111,7 +139,7 @@
 
   @media (max-width: 767px) {
     .navbar {
-      @apply p-4 text-2xl bg-[#181a27];
+      @apply p-4 text-2xl bg-[#0a1529];
     }
   }
 
@@ -147,7 +175,7 @@
 
   .navbar-nav .nav-item a::after {
     content: "";
-    @apply absolute block h-1 w-0 rounded-full bg-[#c95bf5] bottom-0.5 left-0 -z-10 transition-all duration-300;
+    @apply absolute block h-1 w-0 rounded-full bg-[#00e5ff] bottom-0.5 left-0 -z-10 transition-all duration-300;
   }
 
   .navbar-nav .nav-item a:hover::after {
