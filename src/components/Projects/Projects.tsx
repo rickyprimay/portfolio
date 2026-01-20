@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Container, Row, Col, ButtonGroup, Button } from "react-bootstrap";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
@@ -25,10 +24,21 @@ import weatherFlutter from "../../Assets/Projects/weather-flutter.png";
 import youApp from "../../Assets/Projects/youapp.png";
 import maharbote from "../../Assets/Projects/maharbote.png";
 
-function Projects() {
-  const [filter, setFilter] = useState("All");
+interface Project {
+  imgPath: string;
+  title: string;
+  description: string;
+  category: string;
+  ghLink?: string;
+  demoLink?: string;
+}
 
-  const projects = [
+type FilterCategory = "All" | "Web" | "iOS" | "Android" | "Flutter" | "Mobile Development" | "Full-Stack Development";
+
+const Projects: React.FC = () => {
+  const [filter, setFilter] = useState<FilterCategory>("All");
+
+  const projects: Project[] = [
     {
       imgPath: senikita,
       title: "Seni Kita",
@@ -47,7 +57,7 @@ function Projects() {
       imgPath: maharbote,
       title: "Maharbote Social",
       description: "Worked as a Mobile Developer (Flutter for Android & iOS) and Backend Developer (NestJS) on Maharbote Social, a personality-based social application. Implemented real-time chat features, personality scoring systems including MBTI, Maharbote Score (based on Myanmar mythology), compatibility analysis, zodiac, horoscope, and numerology. Focused on scalable architecture, API design, and seamless cross-platform user experience. The application has been released on both the Apple App Store and Google Play Store.",
-      category: "Flutter / Full-Stack Development",
+      category: "Full-Stack Development",
       demoLink: "https://apps.apple.com/us/app/maharbote-social/id6753066582"
     },
     {
@@ -95,7 +105,7 @@ function Projects() {
     {
       imgPath: hitech,
       title: "Online Presence With Face Recognition and Geolocation",
-      description: "I’m building a website for the Hi-Technology 2023 Software Fair. The tech stack I used includes SvelteKit, Supabase, and PostgreSQL. For face recognition, I utilized the face-api.js API, and for geolocation, I implemented Mozilla Web API.",
+      description: "I'm building a website for the Hi-Technology 2023 Software Fair. The tech stack I used includes SvelteKit, Supabase, and PostgreSQL. For face recognition, I utilized the face-api.js API, and for geolocation, I implemented Mozilla Web API.",
       category: "Web",
       ghLink: "https://github.com/RickyPrima30/presensi-facerecognition-geolocation",
       demoLink: "https://presensi-mhs.netlify.app/",
@@ -119,7 +129,7 @@ function Projects() {
       imgPath: semnasti,
       title: "Website Registration Event Seminar Nasional Teknik Informatika",
       description: "Developed a website for the registration of the National Seminar on Informatics Engineering. The website features a listing ticket pricing, directly to Form. The tech stack includes Laravel, TailwindCSS, and MySQL.",
-      category: "Web",  
+      category: "Web",
       demoLink: "https://semnasti.hmtiudinus.org/",
     },
     {
@@ -139,7 +149,7 @@ function Projects() {
     {
       imgPath: codejam,
       title: "Website Code Jam Academy",
-      description: "I’m building a website for Code Jam Academy 2023. The project is an internal training website by Himpunan Mahasiswa Teknik Informatika. The theme of the project is Laravel 10 CRUD with Authentication. Tech stack: HTML5 and TailwindCSS.",
+      description: "I'm building a website for Code Jam Academy 2023. The project is an internal training website by Himpunan Mahasiswa Teknik Informatika. The theme of the project is Laravel 10 CRUD with Authentication. Tech stack: HTML5 and TailwindCSS.",
       category: "Web",
       ghLink: "https://github.com/codejamacademy/codejamacademy.github.io",
       demoLink: "https://codejamacademy.github.io",
@@ -147,7 +157,7 @@ function Projects() {
     {
       imgPath: ppko,
       title: "jARictku",
-      description: "I’m building this website for the Program Penguatan Kapasitas Ormawa (PPK-O). I served as a developer on the team. This project features augmented reality technology using Laravel, TailwindCSS, MySQL, and AR.js.",
+      description: "I'm building this website for the Program Penguatan Kapasitas Ormawa (PPK-O). I served as a developer on the team. This project features augmented reality technology using Laravel, TailwindCSS, MySQL, and AR.js.",
       category: "Web",
       demoLink: "https://jaricktu.com",
     },
@@ -179,42 +189,29 @@ function Projects() {
       category: "Android",
       demoLink: "https://smart-traffic.my.id/",
     },
-
-    
   ];
+
+  const categories: FilterCategory[] = ["All", "Web", "iOS", "Android", "Flutter", "Mobile Development", "Full-Stack Development"];
 
   const filteredProjects = projects.filter(
     (project) => filter === "All" || project.category === filter
   );
 
   return (
-    <Container
-      fluid
-      className="project-section"
-      style={{
-        background: "#1a1a2e",
-        color: "#fff",
-        padding: "40px 20px",
-      }}
-    >
+    <div className="project-section">
       <Particle />
-      <Container>
+      <div className="container mx-auto px-4">
         <motion.h1
-          className="project-heading"
-          style={{
-            textAlign: "center",
-            fontWeight: "700",
-            color: "#ffc107",
-            marginBottom: "20px",
-          }}
+          className="project-heading text-center font-bold text-yellow-400 mb-5"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          My Recent <strong style={{ color: "#cd5ff8" }}>Projects</strong>
+          My Recent <strong className="purple-text">Projects</strong>
         </motion.h1>
+
         <motion.p
-          style={{ textAlign: "center", marginBottom: "30px" }}
+          className="text-center mb-7.5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
@@ -222,56 +219,51 @@ function Projects() {
           Here are a few projects I've worked on recently and in production.
         </motion.p>
 
+        {/* Filter Buttons */}
         <motion.div
-          style={{ display: "flex", justifyContent: "center", marginBottom: "30px" }}
+          className="flex flex-wrap justify-center gap-2 py-6 mb-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          <ButtonGroup>
-            {["All", "Web", "iOS", "Android", "Flutter"].map((category) => (
-              <Button
-                key={category}
-                variant={filter === category ? "dark" : "light"}
-                onClick={() => setFilter(category)}
-                style={{
-                  border: "2px solid #a24dd386",
-                  color: filter === category ? "#fff" : "#a24dd386",
-                  background: filter === category ? "#a24dd386" : "transparent",
-                  fontWeight: "600",
-                  margin: "0 5px",
-                }}
-              >
-                {category}
-              </Button>
-            ))}
-          </ButtonGroup>
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setFilter(category)}
+              className={`px-4 py-2 rounded border-2 font-semibold transition-all ${
+                filter === category
+                  ? "bg-[#a24dd386] text-white border-[#a24dd386]"
+                  : "bg-transparent text-[#a24dd386] border-[#a24dd386] hover:bg-[#a24dd386] hover:text-white"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
         </motion.div>
 
-        <Row style={{ justifyContent: "center" }}>
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
           {filteredProjects.map((project, index) => (
-            <Col md={4} key={index} className="mb-4">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <ProjectCard
-                  imgPath={project.imgPath}
-                  isBlog={false}
-                  title={project.title}
-                  description={project.description}
-                  ghLink={project.ghLink}
-                  demoLink={project.demoLink}
-                />
-              </motion.div>
-            </Col>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <ProjectCard
+                imgPath={project.imgPath}
+                title={project.title}
+                description={project.description}
+                ghLink={project.ghLink}
+                demoLink={project.demoLink}
+              />
+            </motion.div>
           ))}
-        </Row>
-      </Container>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
 export default Projects;
