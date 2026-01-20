@@ -1,5 +1,5 @@
 import React from "react";
-import me from "../../Assets/me-home.jpg";
+import me from "../../Assets/me.jpeg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
