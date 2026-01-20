@@ -37,7 +37,7 @@ const ResumeNew: React.FC = () => {
         </div>
 
         {/* PDF Viewer */}
-        <div className="flex justify-center mb-12 bg-bg-card rounded-lg p-4">
+        <div className="flex justify-center mb-12 rounded-lg p-4 backdrop-blur-sm">
           <Document file={pdf} className="flex justify-center">
             <Page
               pageNumber={1}
