@@ -10,14 +10,14 @@ const Github: React.FC = () => {
       <style>{`
         .react-github-calendar {
           --color-calendar-graph-day-bg: #0a1529;
-          --color-calendar-graph-day-border: rgba(0, 82, 204, 0.2);
-          --color-calendar-graph-day-L1-bg: #0052cc;
-          --color-calendar-graph-day-L2-bg: #00a8ff;
-          --color-calendar-graph-day-L3-bg: #00d4ff;
-          --color-calendar-graph-day-L4-bg: #00e5ff;
+          --color-calendar-graph-day-border: rgba(0, 128, 255, 0.3);
+          --color-calendar-graph-day-L1-bg: #0080ff;
+          --color-calendar-graph-day-L2-bg: #00b8ff;
+          --color-calendar-graph-day-L3-bg: #00e5ff;
+          --color-calendar-graph-day-L4-bg: #00ffff;
         }
         .react-github-calendar text {
-          fill: #4a6fa5;
+          fill: #6b8fd4;
         }
       `}</style>
       <div className="overflow-x-auto pb-4">
@@ -25,7 +25,7 @@ const Github: React.FC = () => {
           username="rickyprimay"
           blockSize={18}
           blockMargin={6}
-          color="#0052cc"
+          color="#0080ff"
           fontSize={18}
         />
       </div>

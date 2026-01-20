@@ -15,7 +15,7 @@ const Particle: React.FC = () => {
             },
           },
           color: {
-            value: ["#0052cc", "#00d4ff", "#00e5ff", "#0099ff"],
+            value: ["#0080ff", "#00ffff", "#00e5ff", "#0099ff"],
           },
           line_linked: {
             enable: false,

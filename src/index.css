@@ -60,7 +60,7 @@
 /* Utilities */
 @layer components {
   .purple-text {
-    @apply text-[#0052cc];
+    @apply text-[#0080ff];
   }
 
   /* Preloader */
@@ -87,18 +87,18 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 82, 204, 0.8);
+    background-color: rgba(0, 128, 255, 0.9);
     @apply rounded-[12px];
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 212, 255, 1);
+    background-color: rgba(0, 255, 255, 1);
   }
 
   /* Navbar */
   .sticky {
     @apply bg-[#050a1aa9] transition-all duration-300 shadow-lg backdrop-blur-[15px];
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
   }
 
   .navbar {
@@ -110,7 +110,7 @@
   }
 
   .navbar-toggler span {
-    @apply block bg-[#0052cc] h-1 w-[27px] my-1 transition-transform duration-300;
+    @apply block bg-[#0080ff] h-1 w-[27px] my-1 transition-transform duration-300;
   }
 
   .navbar-toggler:focus,
@@ -175,7 +175,7 @@
 
   .navbar-nav .nav-item a::after {
     content: "";
-    @apply absolute block h-1 w-0 rounded-full bg-[#00e5ff] bottom-0.5 left-0 -z-10 transition-all duration-300;
+    @apply absolute block h-1 w-0 rounded-full bg-[#00ffff] bottom-0.5 left-0 -z-10 transition-all duration-300;
   }
 
   .navbar-nav .nav-item a:hover::after {

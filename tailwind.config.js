@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Star Wars Blue Saber Theme - Enhanced
-        primary: "#0052cc",      // Vivid blue saber (darker, more intense)
-        "primary-dark": "#002266", // Darker saber blue
+        // Star Wars Blue Saber Theme - Enhanced & Brighter
+        primary: "#0080ff",      // Bright electric blue saber
+        "primary-dark": "#0052cc", // Darker blue variant
 
         // Backgrounds - More vibrant with better contrast
         "bg-dark": "#000508",     // Nearly black with blue tint
@@ -18,19 +18,19 @@ export default {
         "bg-light": "#0f1f3d",    // Lighter blue with visible depth
 
         // Text Colors
-        "text-muted": "#4a6fa5",  // Muted blue (more visible)
+        "text-muted": "#6b8fd4",  // Brighter muted blue
 
         // Accents - More vibrant cyan/electric
-        "accent-purple": "#00e5ff", // Bright cyan (max opacity)
-        "accent-gold": "#00d4ff",   // Electric cyan
+        "accent-purple": "#00ffff", // Bright cyan (max brightness)
+        "accent-gold": "#00e5ff",   // Electric cyan bright
       },
       boxShadow: {
-        "sm": "0 1px 2px 0 rgba(0, 82, 204, 0.1)",
-        "md": "0 4px 6px -1px rgba(0, 82, 204, 0.15)",
-        "lg": "0 10px 15px -3px rgba(0, 82, 204, 0.2)",
-        "xl": "0 20px 25px -5px rgba(0, 82, 204, 0.25)",
-        "glow": "0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 82, 204, 0.4)",
-        "glow-lg": "0 0 30px rgba(0, 212, 255, 0.8), 0 0 60px rgba(0, 82, 204, 0.6)",
+        "sm": "0 1px 2px 0 rgba(0, 128, 255, 0.15)",
+        "md": "0 4px 6px -1px rgba(0, 128, 255, 0.2)",
+        "lg": "0 10px 15px -3px rgba(0, 128, 255, 0.25)",
+        "xl": "0 20px 25px -5px rgba(0, 128, 255, 0.3)",
+        "glow": "0 0 20px rgba(0, 255, 255, 0.7), 0 0 40px rgba(0, 128, 255, 0.5)",
+        "glow-lg": "0 0 30px rgba(0, 255, 255, 0.9), 0 0 60px rgba(0, 128, 255, 0.7)",
       },
       fontFamily: {
         raleway: ["Raleway", "sans-serif"],
