@@ -22,6 +22,8 @@ import semnasti from "../../Assets/Projects/semnasti.jpg";
 import senikita from "../../Assets/Projects/senikita.png";
 import cooksmart from "../../Assets/Projects/cooksmart.png";
 import weatherFlutter from "../../Assets/Projects/weather-flutter.png";
+import youApp from "../../Assets/Projects/youapp.png";
+import maharbote from "../../Assets/Projects/maharbote.png";
 
 function Projects() {
   const [filter, setFilter] = useState("All");
@@ -35,11 +37,18 @@ function Projects() {
       demoLink: "https://senikita.my.id",
     },
     {
-      imgPath: weatherFlutter,
-      title: "Weather App",
-      description: "Developed a Weather app with Flutter. The app uses the OpenWeatherMap API for weather data. and using package Block for state management, Dio for HTTP request, and geo_locator for get location user.",
-      category: "Flutter",
-      ghLink: "https://github.com/rickyprimay/WeatherAppFlutter"
+      imgPath: youApp,
+      title: "YouApp Social",
+      description: "Contributed as a Mobile Developer to YouApp, an interest-based social networking application. Focused on building and optimizing mobile features, handling API integration, improving app performance, and collaborating closely with cross-functional teams to deliver a stable and scalable product. The application has been successfully released on both the Apple App Store and Google Play Store.",
+      category: "Mobile Development",
+      demoLink: "https://apps.apple.com/id/app/youapp-sosial-sesuai-minat/id6444595490?l=id"
+    },
+    {
+      imgPath: maharbote,
+      title: "Maharbote Social",
+      description: "Worked as a Mobile Developer (Flutter for Android & iOS) and Backend Developer (NestJS) on Maharbote Social, a personality-based social application. Implemented real-time chat features, personality scoring systems including MBTI, Maharbote Score (based on Myanmar mythology), compatibility analysis, zodiac, horoscope, and numerology. Focused on scalable architecture, API design, and seamless cross-platform user experience. The application has been released on both the Apple App Store and Google Play Store.",
+      category: "Flutter / Full-Stack Development",
+      demoLink: "https://apps.apple.com/us/app/maharbote-social/id6753066582"
     },
     {
       imgPath: cooksmart,
@@ -90,6 +99,13 @@ function Projects() {
       category: "Web",
       ghLink: "https://github.com/RickyPrima30/presensi-facerecognition-geolocation",
       demoLink: "https://presensi-mhs.netlify.app/",
+    },
+    {
+      imgPath: weatherFlutter,
+      title: "Weather App",
+      description: "Developed a Weather app with Flutter. The app uses the OpenWeatherMap API for weather data. and using package Block for state management, Dio for HTTP request, and geo_locator for get location user.",
+      category: "Flutter",
+      ghLink: "https://github.com/rickyprimay/WeatherAppFlutter"
     },
     {
       imgPath: lms,
