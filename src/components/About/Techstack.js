@@ -9,14 +9,11 @@ import {
   DiMongodb,
   DiPython,
   DiGit,
-  DiJava,
   DiSwift,
 } from "react-icons/di";
 import {
-  SiRedis,
   SiFirebase,
   SiNextdotjs,
-  SiSolidity,
   SiPostgresql,
   SiBun,
 } from "react-icons/si";

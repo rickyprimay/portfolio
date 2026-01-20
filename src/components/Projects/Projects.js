@@ -22,7 +22,6 @@ import semnasti from "../../Assets/Projects/semnasti.jpg";
 import senikita from "../../Assets/Projects/senikita.png";
 import cooksmart from "../../Assets/Projects/cooksmart.png";
 import weatherFlutter from "../../Assets/Projects/weather-flutter.png";
-import { desc, img } from "framer-motion/client";
 
 function Projects() {
   const [filter, setFilter] = useState("All");
