@@ -59,7 +59,7 @@ const Projects: React.FC = () => {
       title: "YouApp Social",
       description:
         "Contributed as a Mobile Developer to YouApp, an interest-based social networking application. Focused on building and optimizing mobile features, handling API integration, improving app performance, and collaborating closely with cross-functional teams to deliver a stable and scalable product. The application has been successfully released on both the Apple App Store and Google Play Store.",
-      category: "Mobile Development",
+      category: "Flutter",
       demoLink:
         "https://apps.apple.com/id/app/youapp-sosial-sesuai-minat/id6444595490?l=id",
     },
@@ -68,7 +68,7 @@ const Projects: React.FC = () => {
       title: "Maharbote Social",
       description:
         "Worked as a Mobile Developer (Flutter for Android & iOS) and Backend Developer (NestJS) on Maharbote Social, a personality-based social application. Implemented real-time chat features, personality scoring systems including MBTI, Maharbote Score (based on Myanmar mythology), compatibility analysis, zodiac, horoscope, and numerology. Focused on scalable architecture, API design, and seamless cross-platform user experience. The application has been released on both the Apple App Store and Google Play Store.",
-      category: "Full-Stack Development",
+      category: "Flutter",
       demoLink: "https://apps.apple.com/us/app/maharbote-social/id6753066582",
     },
     {
@@ -224,11 +224,9 @@ const Projects: React.FC = () => {
   const categories: FilterCategory[] = [
     "All",
     "Web",
+    "Flutter",
     "iOS",
     "Android",
-    "Flutter",
-    "Mobile Development",
-    "Full-Stack Development",
   ];
 
   const filteredProjects = projects.filter(
@@ -236,20 +234,20 @@ const Projects: React.FC = () => {
   );
 
   return (
-    <div className="project-section">
+    <div className="relative">
       <Particle />
-      <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 relative z-10 pt-20 md:pt-28">
         <motion.h1
-          className="project-heading text-center font-bold text-yellow-400 mb-5"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6 leading-tight"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          My Recent <strong className="purple-text">Projects</strong>
+          My Recent <span className="text-primary">Projects</span>
         </motion.h1>
 
         <motion.p
-          className="text-center mb-7.5"
+          className="text-center text-gray-300 mb-12 max-w-2xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
@@ -259,7 +257,7 @@ const Projects: React.FC = () => {
 
         {/* Filter Buttons */}
         <motion.div
-          className="flex flex-wrap justify-center gap-2 py-6 mb-8"
+          className="flex flex-wrap justify-center gap-3 py-8 mb-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -268,10 +266,10 @@ const Projects: React.FC = () => {
             <button
               key={category}
               onClick={() => setFilter(category)}
-              className={`px-4 py-2 rounded border-2 font-semibold transition-all ${
+              className={`px-6 py-2.5 rounded-lg border-2 font-semibold transition-all duration-300 text-sm ${
                 filter === category
-                  ? "bg-[#a24dd386] text-white border-[#a24dd386]"
-                  : "bg-transparent text-[#a24dd386] border-[#a24dd386] hover:bg-[#a24dd386] hover:text-white"
+                  ? "bg-primary text-bg-dark border-primary shadow-lg"
+                  : "bg-transparent text-primary border-primary hover:bg-primary/10"
               }`}
             >
               {category}
@@ -280,7 +278,7 @@ const Projects: React.FC = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={index}

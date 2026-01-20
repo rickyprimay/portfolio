@@ -48,9 +48,9 @@ const Techstack: React.FC = () => {
         {techIcons.map((Icon, index) => (
           <div
             key={index}
-            className="tech-icons flex items-center justify-center"
+            className="flex items-center justify-center h-32 w-32 bg-bg-card border border-primary/30 rounded-xl p-6 hover:border-primary/60 hover:bg-primary/5 transition-all duration-300 hover:shadow-lg hover:scale-110"
           >
-            <Icon className="text-5xl md:text-6xl lg:text-7xl" />
+            <Icon className="text-5xl md:text-6xl lg:text-7xl text-primary hover:text-accent-purple transition-colors duration-300" />
           </div>
         ))}
       </div>

@@ -42,15 +42,15 @@ const Navbar: React.FC = () => {
     <nav
       className={`navbar fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         navColour
-          ? "sticky bg-[#1b1a2ea9] shadow-lg backdrop-blur-[15px]"
-          : "navbar bg-transparent"
+          ? "bg-[rgba(12,5,19,0.85)] backdrop-blur-xl shadow-2xl border-b border-primary/20"
+          : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-3 md:px-8">
-        <div className="flex items-center justify-between h-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="flex items-center justify-between h-16">
           {/* Brand */}
           <Link to="/" className="flex items-center">
-            <h1 className="main-name text-xl font-bold text-[#cd5ff8]">
+            <h1 className="text-xl md:text-2xl font-bold text-primary hover:text-accent-purple transition-colors duration-300">
               rickyprimay
             </h1>
           </Link>
@@ -62,17 +62,17 @@ const Navbar: React.FC = () => {
             aria-label="Toggle navigation"
           >
             <span
-              className={`block w-full h-0.5 bg-[#be50f4] transition-all duration-300 origin-center ${
+              className={`block w-full h-0.5 bg-primary transition-all duration-300 origin-center ${
                 isExpanded ? "rotate-45 translate-y-1.5" : ""
               }`}
             ></span>
             <span
-              className={`block w-full h-0.5 bg-[#be50f4] transition-opacity duration-300 ${
+              className={`block w-full h-0.5 bg-primary transition-opacity duration-300 ${
                 isExpanded ? "opacity-0" : "opacity-100"
               }`}
             ></span>
             <span
-              className={`block w-full h-0.5 bg-[#be50f4] transition-all duration-300 origin-center ${
+              className={`block w-full h-0.5 bg-primary transition-all duration-300 origin-center ${
                 isExpanded ? "-rotate-45 -translate-y-1.5" : ""
               }`}
             ></span>
@@ -87,16 +87,16 @@ const Navbar: React.FC = () => {
                 <Link
                   key={item.label}
                   to={item.to}
-                  className={`nav-link transition-all duration-300 relative group flex items-center gap-2 ${
+                  className={`nav-link transition-all duration-300 relative group flex items-center gap-2 text-sm font-medium ${
                     isActive
-                      ? "text-[#c95bf5]"
-                      : "text-white hover:text-purple-300"
+                      ? "text-primary"
+                      : "text-gray-300 hover:text-primary"
                   }`}
                 >
                   <IconComponent className="text-lg" />
                   <span>{item.label}</span>
                   <span
-                    className={`absolute bottom-0 left-0 h-1 bg-[#c95bf5] transition-all duration-300 ${
+                    className={`absolute bottom-0 left-0 h-1 bg-primary transition-all duration-300 ${
                       isActive ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                   ></span>
@@ -109,7 +109,7 @@ const Navbar: React.FC = () => {
               href="https://github.com/RickyPrima30/portfolio"
               target="_blank"
               rel="noopener noreferrer"
-              className="fork-btn-inner flex items-center gap-2 px-4 py-2 bg-[#934cce5e] hover:bg-[#a24dd386] rounded transition-all duration-300 hover:-translate-y-0.5"
+              className="flex items-center gap-2 px-4 py-2 border-2 border-primary/50 text-primary hover:bg-primary hover:text-bg-dark rounded-lg transition-all duration-300 hover:shadow-lg font-medium text-sm"
             >
               <CgGitFork className="text-lg" />
               <AiFillStar className="text-base" />
@@ -127,8 +127,8 @@ const Navbar: React.FC = () => {
             ></div>
 
             {/* Mobile Menu */}
-            <div className="md:hidden absolute top-full left-0 right-0 bg-[#181a27] shadow-lg z-50">
-              <div className="flex flex-col gap-2 p-3">
+            <div className="md:hidden absolute top-full left-0 right-0 bg-bg-card shadow-lg z-50 border-b border-primary/10">
+              <div className="flex flex-col gap-2 p-4">
                 {navItems.map((item) => {
                   const IconComponent = item.icon;
                   const isActive = location.pathname === item.to;
@@ -137,10 +137,10 @@ const Navbar: React.FC = () => {
                       key={item.label}
                       to={item.to}
                       onClick={handleNavClick}
-                      className={`nav-link transition-all duration-300 flex items-center gap-2 px-4 py-2 rounded ${
+                      className={`nav-link transition-all duration-300 flex items-center gap-2 px-4 py-3 rounded-lg font-medium ${
                         isActive
-                          ? "bg-[#934cce5e] text-[#c95bf5]"
-                          : "text-white hover:text-purple-300 hover:bg-[#2a2844]"
+                          ? "bg-primary/20 text-primary border border-primary/30"
+                          : "text-gray-300 hover:text-primary hover:bg-primary/10"
                       }`}
                     >
                       <IconComponent className="text-lg" />
@@ -154,7 +154,7 @@ const Navbar: React.FC = () => {
                   href="https://github.com/RickyPrima30/portfolio"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="fork-btn-inner flex items-center gap-2 px-4 py-2 bg-[#934cce5e] hover:bg-[#a24dd386] rounded transition-all duration-300 w-full justify-center"
+                  className="flex items-center gap-2 px-4 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-bg-dark rounded-lg transition-all duration-300 w-full justify-center font-medium mt-2"
                 >
                   <CgGitFork className="text-lg" />
                   <AiFillStar className="text-base" />

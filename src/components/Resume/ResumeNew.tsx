@@ -15,28 +15,32 @@ const ResumeNew: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <div className="resume-section">
-        <Particle />
-        
+    <div className="relative">
+      <Particle />
+      <div className="max-w-7xl mx-auto px-4 relative z-10 pt-20 md:pt-28">
+        {/* Header */}
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 leading-tight">
+          My <span className="text-primary">Resume</span>
+        </h1>
+
         {/* Download Button - Top */}
-        <div className="flex justify-center relative mb-8">
+        <div className="flex justify-center mb-12">
           <a
             href={pdf}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary px-8 py-3 rounded border border-[#623686] text-white bg-[#623686] hover:bg-[#6d20c5d7] transition-all flex items-center gap-2"
+            className="px-8 py-3 rounded-lg border-2 border-primary text-primary hover:bg-primary hover:text-bg-dark transition-all duration-300 flex items-center gap-2 font-semibold hover:shadow-lg hover:scale-105"
           >
-            <AiOutlineDownload />
+            <AiOutlineDownload className="text-xl" />
             Download CV
           </a>
         </div>
 
         {/* PDF Viewer */}
-        <div className="resume flex justify-center">
+        <div className="flex justify-center mb-12 bg-bg-card rounded-lg p-4">
           <Document file={pdf} className="flex justify-center">
-            <Page 
-              pageNumber={1} 
+            <Page
+              pageNumber={1}
               scale={width > 786 ? 1.7 : 0.6}
               renderTextLayer={false}
               renderAnnotationLayer={false}
@@ -45,14 +49,14 @@ const ResumeNew: React.FC = () => {
         </div>
 
         {/* Download Button - Bottom */}
-        <div className="flex justify-center relative mt-8">
+        <div className="flex justify-center mb-8">
           <a
             href={pdf}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary px-8 py-3 rounded border border-[#623686] text-white bg-[#623686] hover:bg-[#6d20c5d7] transition-all flex items-center gap-2"
+            className="px-8 py-3 rounded-lg border-2 border-primary text-primary hover:bg-primary hover:text-bg-dark transition-all duration-300 flex items-center gap-2 font-semibold hover:shadow-lg hover:scale-105"
           >
-            <AiOutlineDownload />
+            <AiOutlineDownload className="text-xl" />
             Download CV
           </a>
         </div>
