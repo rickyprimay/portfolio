@@ -26,7 +26,7 @@ const Home2: React.FC = () => {
               <br /> I am fluent in programming languages like
               <span className="text-primary font-semibold">
                 {" "}
-                Javascript, Swift(I am Very Love IT!), Dart, PHP, and Go.{" "}
+                Javascript, Swift(I really love IT!), Dart, PHP, and Go.{" "}
               </span>
               <br />
               <br />
