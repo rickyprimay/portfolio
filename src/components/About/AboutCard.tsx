@@ -60,7 +60,7 @@ const AboutCard: React.FC = () => {
           </li>
         </ul>
 
-        <p className="mt-8 italic text-primary/80 text-sm leading-relaxed">
+        <p className="mt-8 italic text-sm leading-relaxed">
           "Build with Clean Architecture, Scale with Confidence"
         </p>
         <footer className="text-primary/60 text-sm mt-2 font-medium">
