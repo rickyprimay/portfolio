@@ -32,11 +32,11 @@ const Home: React.FC = () => {
               </div>
 
               {/* Right Column - Image */}
-              <div className="flex justify-center pb-5">
+              <div className="flex justify-center items-center pb-5 md:pb-0">
                 <img
                   src={me}
                   alt="home pic"
-                  className="w-full max-h-[500px] rounded-2xl object-cover"
+                  className="w-full h-auto max-w-md md:max-w-full md:max-h-[500px] rounded-2xl object-cover shadow-lg"
                 />
               </div>
             </div>

@@ -57,23 +57,23 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex flex-col gap-0.5 focus:outline-none"
+            className="md:hidden flex flex-col gap-1.5 focus:outline-none relative w-6 h-6 justify-center"
             onClick={() => setIsExpanded(!isExpanded)}
             aria-label="Toggle navigation"
           >
             <span
-              className={`block w-[27px] h-1 bg-[#be50f4] transition-transform duration-300 ${
-                isExpanded ? "rotate-45 absolute left-3 top-2" : ""
+              className={`block w-full h-0.5 bg-[#be50f4] transition-all duration-300 origin-center ${
+                isExpanded ? "rotate-45 translate-y-1.5" : ""
               }`}
             ></span>
             <span
-              className={`block w-[27px] h-1 bg-[#be50f4] transition-opacity duration-300 ${
-                isExpanded ? "opacity-0" : ""
+              className={`block w-full h-0.5 bg-[#be50f4] transition-opacity duration-300 ${
+                isExpanded ? "opacity-0" : "opacity-100"
               }`}
             ></span>
             <span
-              className={`block w-[27px] h-1 bg-[#be50f4] transition-transform duration-300 ${
-                isExpanded ? "-rotate-45 absolute left-3 top-2" : ""
+              className={`block w-full h-0.5 bg-[#be50f4] transition-all duration-300 origin-center ${
+                isExpanded ? "-rotate-45 -translate-y-1.5" : ""
               }`}
             ></span>
           </button>
@@ -119,40 +119,49 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isExpanded && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-[#181a27] shadow-lg">
-            <div className="flex flex-col gap-2 p-3">
-              {navItems.map((item) => {
-                const IconComponent = item.icon;
-                const isActive = location.pathname === item.to;
-                return (
-                  <Link
-                    key={item.label}
-                    to={item.to}
-                    onClick={handleNavClick}
-                    className={`nav-link transition-all duration-300 flex items-center gap-2 px-4 py-2 rounded ${
-                      isActive
-                        ? "bg-[#934cce5e] text-[#c95bf5]"
-                        : "text-white hover:text-purple-300 hover:bg-[#2a2844]"
-                    }`}
-                  >
-                    <IconComponent className="text-lg" />
-                    <span>{item.label}</span>
-                  </Link>
-                );
-              })}
+          <>
+            {/* Backdrop */}
+            <div
+              className="fixed inset-0 bg-black/50 md:hidden z-40"
+              onClick={() => setIsExpanded(false)}
+            ></div>
 
-              {/* Mobile Fork Button */}
-              <a
-                href="https://github.com/RickyPrima30/portfolio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="fork-btn-inner flex items-center gap-2 px-4 py-2 bg-[#934cce5e] hover:bg-[#a24dd386] rounded transition-all duration-300 w-full justify-center"
-              >
-                <CgGitFork className="text-lg" />
-                <AiFillStar className="text-base" />
-              </a>
+            {/* Mobile Menu */}
+            <div className="md:hidden absolute top-full left-0 right-0 bg-[#181a27] shadow-lg z-50">
+              <div className="flex flex-col gap-2 p-3">
+                {navItems.map((item) => {
+                  const IconComponent = item.icon;
+                  const isActive = location.pathname === item.to;
+                  return (
+                    <Link
+                      key={item.label}
+                      to={item.to}
+                      onClick={handleNavClick}
+                      className={`nav-link transition-all duration-300 flex items-center gap-2 px-4 py-2 rounded ${
+                        isActive
+                          ? "bg-[#934cce5e] text-[#c95bf5]"
+                          : "text-white hover:text-purple-300 hover:bg-[#2a2844]"
+                      }`}
+                    >
+                      <IconComponent className="text-lg" />
+                      <span>{item.label}</span>
+                    </Link>
+                  );
+                })}
+
+                {/* Mobile Fork Button */}
+                <a
+                  href="https://github.com/RickyPrima30/portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="fork-btn-inner flex items-center gap-2 px-4 py-2 bg-[#934cce5e] hover:bg-[#a24dd386] rounded transition-all duration-300 w-full justify-center"
+                >
+                  <CgGitFork className="text-lg" />
+                  <AiFillStar className="text-base" />
+                </a>
+              </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </nav>
