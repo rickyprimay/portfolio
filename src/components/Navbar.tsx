@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-12">
           {/* Brand */}
           <Link to="/" className="flex items-center">
-            <h1 className="main-name text-2xl font-bold text-[#cd5ff8]">
+            <h1 className="main-name text-xl font-bold text-[#cd5ff8]">
               rickyprimay
             </h1>
           </Link>

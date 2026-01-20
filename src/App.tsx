@@ -6,11 +6,12 @@ import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
 import Resume from "./components/Resume/ResumeNew";
+import SEO from "./components/SEO";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Navigate
+  Navigate,
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import "./index.css";
@@ -30,6 +31,11 @@ const App: React.FC<AppProps> = () => {
 
   return (
     <Router>
+      <SEO
+        title="Ricky Primayuda Putra - Mobile Developer | iOS, Android & Full-Stack Developer"
+        description="Expert Mobile Developer specializing in iOS (SwiftUI), Android (Kotlin/Dart/Flutter), and Full-Stack Development. Experienced in React, Node.js, NestJS, and backend technologies."
+        keywords="Ricky Primayuda, mobile developer, iOS developer, Android developer, Flutter developer, full-stack developer, Swift, Kotlin, React Native"
+      />
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar />
