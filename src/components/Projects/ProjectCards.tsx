@@ -74,7 +74,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 href={ghLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2.5 rounded-lg border-2 border-[#cd5ff8] text-[#cd5ff8] font-semibold hover:bg-[#cd5ff8] hover:text-bg-dark transition-all duration-300 flex items-center gap-2 hover:shadow-lg hover:scale-105"
+                className="px-6 py-2.5 rounded-lg border-2 border-accent-purple text-accent-purple font-semibold hover:bg-accent-purple hover:text-bg-dark transition-all duration-300 flex items-center gap-2 hover:shadow-lg hover:scale-105"
               >
                 <BsGithub />
                 GitHub

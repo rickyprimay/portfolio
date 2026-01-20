@@ -3,7 +3,13 @@ import { ImPointRight } from "react-icons/im";
 
 const AboutCard: React.FC = () => {
   return (
-    <div className="bg-bg-card border border-primary/20 p-8 rounded-xl shadow-lg">
+    <div
+      className="bg-bg-card border border-primary/20 p-8 rounded-xl shadow-lg"
+      style={{
+        backgroundColor: "#0a1529",
+        borderColor: "rgba(0, 128, 255, 0.2)",
+      }}
+    >
       <div>
         <p className="text-base leading-relaxed text-gray-300 text-justify mb-6">
           Hi Everyone, I am{" "}
@@ -33,9 +39,9 @@ const AboutCard: React.FC = () => {
           <span className="text-primary font-semibold">
             Flutter Developer
           </span>{" "}
-          at YouApp Pte. Ltd, leveraging my mobile expertise to build
-          production ready, cross platform applications with robust architecture
-          and best practices.
+          at YouApp Pte. Ltd, leveraging my mobile expertise to build production
+          ready, cross platform applications with robust architecture and best
+          practices.
           <br />
           <br />
           Core Competencies:
